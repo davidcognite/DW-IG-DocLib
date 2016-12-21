@@ -49,8 +49,25 @@ export class FilesComponent {
     }
 
     declareInPlaceRecord(event) {
-        // Returns promise: this. jsAPI.webScript.executeWebScript('GET', this.scriptPath, this.scriptArgs, this.contextRoot, this.servicePath)
+        // Returns promise: this.jsAPI.webScript.executeWebScript('GET', this.scriptPath, this.scriptArgs, this.contextRoot, this.servicePath)
         alert('Declare record for ' + event.value.entry.name);
+        console.log(event);
+    }
+
+    declareVersionAsRecord(event) {
+        // Note: In place record declaration API doesn't exist yet, so creating a new node with the same name, for now. (RM-4429)
+        let postBody = JSON.stringify({
+            name: event.value.entry.name,
+            nodeType: event.value.entry.nodeType
+        });
+        this.jsAPI.webScript.executeWebScript('POST', 'fileplan-components/-unfiled-/children', "", "alfresco", "api/-default-/public/ig/versions/1", postBody)
+            .then(function (data){
+                alert('Declared record');
+                console.log(data);
+                }, function (data) {
+                alert('Unable to declare record');
+                console.log(data);
+            });
     }
 
     myFolderAction1(event) {

@@ -74,6 +74,11 @@
                         (execute)="declareInPlaceRecord($event)">
                     </content-action>
                     <content-action
+                        target="document"
+                        title="IG: Declare Version as Record"
+                        (execute)="declareVersionAsRecord($event)">
+                    </content-action>
+                    <content-action
                             target="document"
                             title="{{'DOCUMENT_LIST.ACTIONS.DOCUMENT.DOWNLOAD' | translate}}"
                             handler="download">
