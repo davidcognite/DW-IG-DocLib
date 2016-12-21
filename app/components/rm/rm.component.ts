@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import {DocumentList} from 'ng2-alfresco-documentlist';
+import {RmFilePlanComponent} from 'ig-components/rm-file-plan';
 import {AlfrescoAuthenticationService} from 'ng2-alfresco-core';
 
 declare let __moduleName: string;
@@ -22,8 +22,8 @@ export class RMComponent {
 
     acceptedFilesType: string = '.jpg,.pdf,.js';
 
-    @ViewChild(DocumentList)
-    documentList: DocumentList;
+    @ViewChild(RmFilePlanComponent)
+    documentList: RmFilePlanComponent;
 
     constructor(private router: Router,
                 private authService: AlfrescoAuthenticationService) {
