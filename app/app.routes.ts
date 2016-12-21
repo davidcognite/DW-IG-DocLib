@@ -3,25 +3,22 @@ import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {
- SearchComponent,
- FilesComponent,
-
+    SearchComponent,
+    FilesComponent,
+    RMComponent,
     LoginDemoComponent,
-      SettingComponent
+    SettingComponent
 } from './components/index';
 
 export const appRoutes: Routes = [
-  
+
     { path: 'home', component: FilesComponent },
     { path: 'files', component: FilesComponent },
-  
-  
+    { path: 'rm', component: RMComponent },
+
     { path: 'search', component: SearchComponent },
-  
-  
-    { path: 'files', component: FilesComponent },
-  
-  
+
+
     { path: '', component: LoginDemoComponent },
     { path: 'login', component: LoginDemoComponent },
     { path: 'settings', component: SettingComponent }

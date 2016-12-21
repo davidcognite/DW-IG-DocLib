@@ -21,14 +21,15 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routes';
 
 import {
-  
+
     SearchComponent,
     SearchBarComponent,
-  
-  
-  
+
+
+
     FilesComponent,
-  
+    RMComponent,
+
     LoginDemoComponent,
       SettingComponent
 } from './components/index';
@@ -38,29 +39,25 @@ import {
         BrowserModule,
         routing,
         CoreModule.forRoot(),
-        
+
         SearchModule.forRoot(),
-        
-        
+
+
         DataTableModule,
         DocumentListModule.forRoot(),
         UploadModule.forRoot(),
         ViewerModule.forRoot(),
-        
-        
+
+
         LoginModule,
         UserInfoComponentModule.forRoot()
     ],
     declarations: [
         AppComponent,
-        
         SearchBarComponent,
         SearchComponent,
-        
-        
-        
         FilesComponent,
-        
+        RMComponent,
         LoginDemoComponent,
           SettingComponent
     ],

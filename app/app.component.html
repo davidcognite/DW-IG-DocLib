@@ -4,28 +4,28 @@
     <header class="mdl-layout__header">
       <div class="mdl-button-padding mdl-layout__header-row">
 
-        
+
         <div *ngIf="isLoggedIn()">
           <ng2-alfresco-userinfo class="user-profile" [menuOpenType]="left">
           </ng2-alfresco-userinfo>
         </div>
-        
+
 
 
         <!-- Title -->
-        <span class="mdl-layout-title">DW-IG-DocLib</span>
+        <span class="mdl-layout-title">Information Governance Demo App</span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="mdl-layout-spacer"></div>
 
-        
+
         <!-- Search bar -->
         <search-bar (expand)="onToggleSearch($event)"></search-bar>
-        
+
 
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="" routerLink="/files">Files</a>
-          
+          <a class="mdl-navigation__link" href="" routerLink="/files">Collaboration Sites</a>
+          <a class="mdl-navigation__link" href="" routerLink="/rm">File Plan</a>
         </nav>
 
         <!-- Right aligned menu below button -->
@@ -36,21 +36,6 @@
 
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
             for="demo-menu-lower-right">
-          <li class="mdl-menu__item" (click)="changeLanguage('en')">
-            <span class="flag-icon flag-icon-gb"></span>
-            <label tabindex="0"> English</label>
-          </li>
-          <li class="mdl-menu__item" (click)="changeLanguage('gr')">
-            <span class="flag-icon flag-icon-gr"></span>
-            <label tabindex="0"> Greek</label>
-          </li>
-          <li class="mdl-menu__item" (click)="changeLanguage('it')">
-            <span class="flag-icon flag-icon-it"></span>
-            <label tabindex="0"> Italian</label>
-          </li>
-          <a class="mdl-menu__item" routerLink="/about">
-            <label tabindex="0">About</label>
-          </a>
           <a *ngIf="!isLoggedIn()" class="mdl-menu__item" routerLink="/login">
             <label tabindex="0">Login</label>
           </a>
