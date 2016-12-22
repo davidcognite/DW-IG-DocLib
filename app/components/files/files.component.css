@@ -8,10 +8,14 @@
   }
 }
 
-.classificationLevel {
+alfresco-document-list >>>  .classificationLevel div {
     color: red;
     border: 1px solid red;
     border-radius: 5px;
     text-align: center;
     width: 25px;
+}
+
+alfresco-document-list >>> .classificationLevel div[data-automation-id="text_undefined"] {
+    border: none;
 }
