@@ -5,7 +5,7 @@ import {
     DocumentActionsService,
     DocumentList
 } from 'ng2-alfresco-documentlist';
-import {AlfrescoAuthenticationService} from 'ng2-alfresco-core';
+import {AlfrescoApiService} from 'ng2-alfresco-core';
 
 
 declare let __moduleName: string;
@@ -34,10 +34,10 @@ export class FilesComponent {
 
     constructor(private documentActions: DocumentActionsService,
                 private router: Router,
-                private authService: AlfrescoAuthenticationService) {
+                private apiService: AlfrescoApiService) {
         documentActions.setHandler('my-handler', this.myDocumentActionHandler.bind(this));
 
-        this.jsAPI = authService.getAlfrescoApi();
+        this.jsAPI = apiService.getInstance();
     }
 
     myDocumentActionHandler(obj: any) {
@@ -60,14 +60,16 @@ export class FilesComponent {
             name: event.value.entry.name,
             nodeType: event.value.entry.nodeType
         });
-        this.jsAPI.webScript.executeWebScript('POST', 'fileplan-components/-unfiled-/children', "", "alfresco", "api/-default-/public/ig/versions/1", postBody)
-            .then(function (data){
-                alert('Declared record');
-                console.log(data);
-                }, function (data) {
-                alert('Unable to declare record');
-                console.log(data);
-            });
+        this.jsAPI.webScript.executeWebScript('POST', 'fileplan-components/-unfiled-/children', '', 'alfresco', 'api/-default-/public/ig/versions/1', postBody)
+            .then(
+                function (data) {
+                    alert('Declared record');
+                    console.log(data);
+                },
+                function (data) {
+                    alert('Unable to declare record');
+                    console.log(data);
+                });
     }
 
     myFolderAction1(event) {

@@ -1,7 +1,8 @@
 import {Component, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import {RmFilePlanComponent} from 'ig-components/rm-file-plan';
-import {AlfrescoAuthenticationService} from 'ng2-alfresco-core';
+// import {RmFilePlanComponent} from 'ig-components/rm-file-plan';
+import {DocumentList} from 'ng2-alfresco-documentlist';
+import {AlfrescoApiService} from 'ng2-alfresco-core';
 
 declare let __moduleName: string;
 
@@ -22,12 +23,12 @@ export class RMComponent {
 
     acceptedFilesType: string = '.jpg,.pdf,.js';
 
-    @ViewChild(RmFilePlanComponent)
-    documentList: RmFilePlanComponent;
+    @ViewChild(DocumentList)
+    documentList: DocumentList;
 
     constructor(private router: Router,
-                private authService: AlfrescoAuthenticationService) {
-        this.jsAPI = authService.getAlfrescoApi();
+                private apiService: AlfrescoApiService) {
+        this.jsAPI = apiService.getInstance();
     }
 
     showFile(event) {
@@ -42,7 +43,7 @@ export class RMComponent {
     onFolderChanged(event?: any) {
         if (event) {
             this.currentPath = event.path;
-            this.breadcrumbPath = event.path.replace("/Sites/rm/documentLibrary","");
+            this.breadcrumbPath = event.path.replace('/Sites/rm/documentLibrary', '');
         }
     }
 }
