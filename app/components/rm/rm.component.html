@@ -4,7 +4,7 @@
             [currentFolderPath]="breadcrumbPath"
             [target]="documentList">
         </alfresco-document-list-breadcrumb>
-        <rm-file-plan
+        <alfresco-document-list
                 #documentList
                 [currentFolderPath]="currentPath"
                 [contextMenuActions]="false"
@@ -40,7 +40,7 @@
                         class="desktop-only">
                 </content-column>
             </content-columns>
-        </rm-file-plan>
+        </alfresco-document-list>
         <alfresco-pagination
             [provider]="documentList.data"
             [supportedPageSizes]="[5, 10, 15, 20]">
