@@ -76,7 +76,7 @@
     "ng2-activiti-processlist": "0.5.0",
     "ng2-alfresco-webscript": "0.5.0",
     "ng2-alfresco-tag": "0.5.0",
-    "ig-components": "git@github.com:davidcognite/ig-components.git"
+    "ig-components": "https://github.com/davidcognite/ig-components.git"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.32",
